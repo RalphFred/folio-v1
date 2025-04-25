@@ -1,26 +1,62 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    --bg-dark: #121212;
+    --text-light: #FFFFFF;
+    --accent-color: #dcd5b1;
+    --border-radius: 10px;
+    --padding: 20px;
+    --bg-gradient-jet: linear-gradient(to bottom right, hsla(240, 1%, 18%, 0.251) 0%, hsla(240, 2%, 11%, 0) 100%), hsl(240, 2%, 13%);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    padding: var(--padding);
+}
+
+.image-bg {
+    background: linear-gradient(145deg, #1e1e1e, #2c2c2c);
+}
+
+.sidebar {
+    flex: 0 0 250px;
+    background: #181818;
+    border: 1px solid #333;
+    padding: var(--padding);
+    border-radius: var(--padding);
+    margin-right: 40px;
+    height: fit-content;
+    position: sticky;
+    top: 52px;
+    max-height: max-content;
+    height: 100%;
+    margin-bottom: 0;
+    padding-top: 60px;
+    z-index: 1;
+}
+
+.main-content {
+    flex: 1;
+}
+
+@keyframes slow-ping {
+    0% {
+        transform: scale(1);
+        opacity: 0.75;
+    }
+
+    70% {
+        transform: scale(2.8);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(2.8);
+        opacity: 0;
+    }
+}
+
+.custom-ping {
+    animation: slow-ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
