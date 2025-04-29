@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
+import Navbar from "@/components/Navbar";
 
 const montserrat = Montserrat({
   weight: ["400", "700"],
@@ -25,7 +26,8 @@ export default function RootLayout({
       >
         <div className="max-w-7xl w-full lg:my-[30px] flex">
           <Sidebar />
-          <div className="flex-1 bg-[#181818] rounded-3xl p-4 border border-[#333]">
+          <div className="flex-1 bg-dark-200 rounded-3xl p-10 border border-dark-400 relative w-full overflow-hidden min-w-0">
+            <Navbar />
           {children}
           </div>
         </div>

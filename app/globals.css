@@ -3,7 +3,6 @@
 :root {
     --bg-dark: #121212;
     --text-light: #FFFFFF;
-    --accent-color: #dcd5b1;
     --border-radius: 10px;
     --padding: 20px;
     --bg-gradient-jet: linear-gradient(to bottom right, hsla(240, 1%, 18%, 0.251) 0%, hsla(240, 2%, 11%, 0) 100%), hsl(240, 2%, 13%);
@@ -13,6 +12,19 @@ body {
     background-color: var(--bg-dark);
     color: var(--text-light);
     padding: var(--padding);
+}
+
+@theme {
+    --color-primary-100: #dcd5b1;
+    --color-primary-200: #c7ba82;
+    --color-primary-300: #ae8f52;
+    --color-primary-400: #997546;
+    --color-primary-500: #805c3d;
+    --color-dark-100: #121212;
+    --color-dark-200: #181818;
+    --color-dark-300: #1e1e1f;
+    --color-dark-400: #333333;
+
 }
 
 .image-bg {
@@ -59,4 +71,23 @@ body {
 
 .custom-ping {
     animation: slow-ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Custom scrollbar styles */
+.custom-scrollbar::-webkit-scrollbar {
+    height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #1e1e1f; /* track color */
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #ae8f52; /* thumb color */
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #997546; /* thumb color on hover */
 }

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { Mail, Phone, MapPin } from 'lucide-react';
 
 export default function Sidebar() {
     return (
@@ -32,7 +33,7 @@ export default function Sidebar() {
                     className="flex items-center gap-4 w-full hover:opacity-90 transition"
                 >
                     <div className='size-12 min-w-12 rounded-xl bg-neutral-800 flex items-center justify-center'>
-                        <Image src="/icons/email.svg" alt="email icon" width={24} height={24} />
+                        <Mail size={24} className='text-primary-200' />
                     </div>
                     <div className='flex-1 text-sm overflow-hidden'>
                         <span className='block text-xs text-neutral-400'>EMAIL</span>
@@ -48,7 +49,7 @@ export default function Sidebar() {
                     className="flex items-center gap-4 w-full hover:opacity-90 transition"
                 >
                     <div className='size-12 min-w-12 rounded-xl bg-neutral-800 flex items-center justify-center'>
-                        <Image src="/icons/phone.svg" alt="phone icon" width={24} height={24} />
+                        <Phone size={24} className='text-primary-200' />
                     </div>
                     <div className='flex-1 text-sm overflow-hidden'>
                         <span className='block text-xs text-neutral-400'>PHONE</span>
@@ -59,13 +60,25 @@ export default function Sidebar() {
                 {/* Location (static) */}
                 <div className="flex items-center gap-4 w-full">
                     <div className='size-12 min-w-12 rounded-xl bg-neutral-800 flex items-center justify-center'>
-                        <Image src="/icons/location.svg" alt="location icon" width={24} height={24} />
+                        <MapPin size={24} className='text-primary-200' />
                     </div>
                     <div className='flex-1 text-sm overflow-hidden'>
                         <span className='block text-xs text-neutral-400'>LOCATION</span>
                         <span className='block truncate whitespace-nowrap'>Lagos, Nigeria</span>
                     </div>
                 </div>
+                
+                {/* <div className='flex justify-center items-center gap-8 mt-4'>
+                    <Link href="https://www.linkedin.com/in/kwaghuter-raphael/" target="_blank" >
+                         <Linkedin size={24} className='text-primary-200' />
+                    </Link>
+                    <Link href="http://github.com/RalphFred" target="_blank" >
+                        <Github size={24} className='text-primary-200' />
+                    </Link>
+                    <Link href="https://www.instagram.com/kwaghuter_r/" target="_blank" >
+                        <Instagram size={24} className='text-primary-200' />
+                    </Link>
+                </div> */}
 
                 <div className='flex justify-center items-center gap-8 mt-4'>
                     <Link href="https://www.linkedin.com/in/kwaghuter-raphael/" target="_blank" >
