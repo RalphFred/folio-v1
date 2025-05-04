@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 
 export default function Sidebar() {
     return (
-        <div className="sidebar flex flex-col items-center max-w-[280px]">
+        <div className="sidebar hidden xl:flex flex-col items-center w-[280px] shrink-0">
             <div className='flex flex-col items-center'>
                 <div className="flex justify-center p-4 image-bg rounded-3xl w-[160px] mb-6 relative">
                     <Image

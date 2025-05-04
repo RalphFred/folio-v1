@@ -11,7 +11,6 @@
 body {
     background-color: var(--bg-dark);
     color: var(--text-light);
-    padding: var(--padding);
 }
 
 @theme {
@@ -24,7 +23,6 @@ body {
     --color-dark-200: #181818;
     --color-dark-300: #1e1e1f;
     --color-dark-400: #333333;
-
 }
 
 .image-bg {
@@ -89,5 +87,24 @@ body {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #997546; /* thumb color on hover */
+    background: #997546; 
+}
+
+/* CHATBAR */
+.chat-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-scrollbar::-webkit-scrollbar-track {
+    background: #1e1e1f; /* track color */
+    border-radius: 10px;
+}
+
+.chat-scrollbar::-webkit-scrollbar-thumb {
+    background: #ae8f52; /* thumb color */
+    border-radius: 10px;
+}
+
+.chat-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #997546; 
 }

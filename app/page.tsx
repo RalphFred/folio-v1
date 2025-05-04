@@ -22,7 +22,7 @@ export default function Home() {
 
                     {/* Card 1: Mobile Apps */}
                     <div className="bg-dark-300 border border-dark-400 p-6 rounded-lg shadow-lg">
-                        <div className="flex items-center mb-4">
+                        <div className="flex items-center">
                             <div className='size-12 min-w-12 rounded-lg bg-dark-400 flex items-center justify-center mr-4'>
                                 <Smartphone className="text-primary-300 size-6" />
                             </div>
@@ -37,7 +37,7 @@ export default function Home() {
 
                     {/* Card 2: Web Development */}
                     <div className="bg-dark-300 border border-dark-400 p-6 rounded-lg shadow-lg">
-                        <div className="flex items-center mb-4">
+                        <div className="flex items-center">
                             <div className='size-12 min-w-12 rounded-lg bg-dark-400 flex items-center justify-center mr-4'>
                                 <Code className="text-primary-300 size-6" />
                             </div>
@@ -52,7 +52,7 @@ export default function Home() {
 
                     {/* Card 3: UI/UX Design */}
                     <div className="bg-dark-300 border border-dark-400 p-6 rounded-lg shadow-lg">
-                        <div className="flex items-center mb-4">
+                        <div className="flex items-center">
                              <div className='size-12 min-w-12 rounded-lg bg-dark-400 flex items-center justify-center mr-4'>
                                 <Palette className="text-primary-300 size-6" />
                             </div>
@@ -67,7 +67,7 @@ export default function Home() {
 
                     {/* Card 4: Backend Development */}
                     <div className="bg-dark-300 border border-dark-400 p-6 rounded-lg shadow-lg">
-                        <div className="flex items-center mb-4">
+                        <div className="flex items-center">
                             <div className='size-12 min-w-12 rounded-lg bg-dark-400 flex items-center justify-center mr-4'>
                                 <Settings className="text-primary-300 size-6" />
                             </div>
