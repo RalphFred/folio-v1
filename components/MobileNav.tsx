@@ -16,16 +16,16 @@ export default function MobileNav() {
     ];
 
     return (
-        <nav className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 bg-[#121212] px-6 py-3 md:px-10 lg:py-4 rounded-full shadow-md border border-neutral-800 flex items-center md:hidden">
+        <nav className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 bg-[#121212] px-3 py-2 sm:px-6 sm:py-3 md:px-10 lg:py-4 rounded-full shadow-md border border-neutral-800 flex items-center md:hidden">
             {/* Nav Links */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 sm:gap-4">
                 {links.map((link) => (
                     <Link
                         key={link.href}
                         href={link.href}
                         className={`transition duration-300 ${
                             pathname === link.href
-                                ? 'text-primary-200 font-semibold'
+                                ? 'text-primary-300 font-semibold'
                                 : 'text-neutral-400 hover:text-white'
                         }`}
                     >

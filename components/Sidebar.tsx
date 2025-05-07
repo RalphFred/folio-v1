@@ -28,7 +28,7 @@ export default function Sidebar() {
             <div className='flex flex-col gap-3 w-full'>
 
                 {/* Email */}
-                <a
+                <Link
                     href="mailto:raphaelgbaorun@gmail.com"
                     className="flex items-center gap-4 w-full hover:opacity-90 transition"
                 >
@@ -39,10 +39,10 @@ export default function Sidebar() {
                         <span className='block text-xs text-neutral-400'>EMAIL</span>
                         <span className='block truncate whitespace-nowrap'>raphaelgbaorun@gmail.com</span>
                     </div>
-                </a>
+                </Link>
 
                 {/* Phone (WhatsApp link) */}
-                <a
+                <Link
                     href="https://wa.me/2347040944615"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -55,7 +55,7 @@ export default function Sidebar() {
                         <span className='block text-xs text-neutral-400'>PHONE</span>
                         <span className='block truncate whitespace-nowrap'>+234 704 094 4615</span>
                     </div>
-                </a>
+                </Link>
 
                 {/* Location (static) */}
                 <div className="flex items-center gap-4 w-full">

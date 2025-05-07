@@ -20,21 +20,6 @@ export default function Home() {
                 <h2 className="text-3xl font-bold mb-6">What I'm Doing</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-                    {/* Card 1: Mobile Apps */}
-                    <div className="bg-dark-300 border border-dark-400 p-6 rounded-lg shadow-lg">
-                        <div className="flex items-center">
-                            <div className='size-12 min-w-12 rounded-lg bg-dark-400 flex items-center justify-center mr-4'>
-                                <Smartphone className="text-primary-300 size-6" />
-                            </div>
-                            <div>
-                                <h3 className="text-xl font-semibold mb-1">Mobile Apps</h3>
-                                <p className="text-neutral-200 text-sm">
-                                    Professional development of applications for Android and ios.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
                     {/* Card 2: Web Development */}
                     <div className="bg-dark-300 border border-dark-400 p-6 rounded-lg shadow-lg">
                         <div className="flex items-center">
@@ -49,17 +34,17 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-
-                    {/* Card 3: UI/UX Design */}
+                    
+                    {/* Card 1: Mobile Apps */}
                     <div className="bg-dark-300 border border-dark-400 p-6 rounded-lg shadow-lg">
                         <div className="flex items-center">
-                             <div className='size-12 min-w-12 rounded-lg bg-dark-400 flex items-center justify-center mr-4'>
-                                <Palette className="text-primary-300 size-6" />
+                            <div className='size-12 min-w-12 rounded-lg bg-dark-400 flex items-center justify-center mr-4'>
+                                <Smartphone className="text-primary-300 size-6" />
                             </div>
                             <div>
-                                <h3 className="text-xl font-semibold mb-1">UI/UX Design</h3>
+                                <h3 className="text-xl font-semibold mb-1">Mobile Apps</h3>
                                 <p className="text-neutral-200 text-sm">
-                                The most modern and high-quality design made at a professional level.
+                                    Professional development of applications for Android and ios.
                                 </p>
                             </div>
                         </div>
@@ -79,6 +64,23 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
+
+                    {/* Card 3: UI/UX Design */}
+                    <div className="bg-dark-300 border border-dark-400 p-6 rounded-lg shadow-lg">
+                        <div className="flex items-center">
+                            <div className='size-12 min-w-12 rounded-lg bg-dark-400 flex items-center justify-center mr-4'>
+                                <Palette className="text-primary-300 size-6" />
+                            </div>
+                            <div>
+                                <h3 className="text-xl font-semibold mb-1">UI/UX Design</h3>
+                                <p className="text-neutral-200 text-sm">
+                                    The most modern and high-quality design made at a professional level.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
             </section>
 
@@ -94,24 +96,24 @@ export default function Home() {
 
                     {/* Skill Icon: Next.js */}
                     <div className="bg-dark-300 border border-dark-400 p-6 rounded-lg shadow-lg flex-none w-48 h-48 flex items-center justify-center">
-                         <Image src="/next-js.svg" alt="Next.js icon" width={64} height={64} className="size-24" />
+                        <Image src="/next-js.svg" alt="Next.js icon" width={64} height={64} className="size-24" />
                     </div>
 
                     {/* Skill Icon: React Native */}
                     <div className="bg-dark-300 border border-dark-400 p-6 rounded-lg shadow-lg flex-none w-48 h-48 flex items-center justify-center">
-                         <Image src="/react-native.svg" alt="React Native icon" width={64} height={64} className="size-24" />
+                        <Image src="/react-native.svg" alt="React Native icon" width={64} height={64} className="size-24" />
                     </div>
 
                     <div className="bg-dark-300 border border-dark-400 p-6 rounded-lg shadow-lg flex-none w-48 h-48 flex items-center justify-center">
-                         <Image src="/firebase.svg" alt="Firebase icon" width={64} height={64} className="size-24" />
+                        <Image src="/firebase.svg" alt="Firebase icon" width={64} height={64} className="size-24" />
                     </div>
 
                     <div className="bg-dark-300 border border-dark-400 p-6 rounded-lg shadow-lg flex-none w-48 h-48 flex items-center justify-center">
-                         <Image src="/figma.svg" alt="Figma icon" width={64} height={64} className="size-24" />
+                        <Image src="/figma.svg" alt="Figma icon" width={64} height={64} className="size-24" />
                     </div>
 
                     <div className="bg-dark-300 border border-dark-400 p-6 rounded-lg shadow-lg flex-none w-48 h-48 flex items-center justify-center">
-                         <Image src="/typescript.svg" alt="TypeScript icon" width={64} height={64} className="size-24" />
+                        <Image src="/typescript.svg" alt="TypeScript icon" width={64} height={64} className="size-24" />
                     </div>
                 </div>
             </section>

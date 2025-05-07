@@ -1,6 +1,7 @@
-"use client"
+'use client';
 import { Send } from 'lucide-react';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import toast, { Toaster } from 'react-hot-toast'; // Import Toaster
 
 // Define the type for a message object
 interface ChatMessage {
@@ -13,7 +14,9 @@ export default function PlaygroundPage() {
     const [messages, setMessages] = useState<ChatMessage[]>([]); // Initialize with empty array, will load from sessionStorage or default
 
     const [input, setInput] = useState('');
-    const [isLoading, setIsLoading] = useState(false); 
+    const [isLoading, setIsLoading] = useState(false);
+
+    const messagesEndRef = useRef<HTMLDivElement>(null);
 
     // Effect to load messages from sessionStorage on component mount
     useEffect(() => {
@@ -39,6 +42,13 @@ export default function PlaygroundPage() {
             sessionStorage.setItem('chatMessages', JSON.stringify(messages));
          }
     }, [messages]); // Dependency array includes messages, runs whenever messages state changes
+
+     // Effect to scroll to bottom whenever messages change
+     useEffect(() => {
+         if (messagesEndRef.current) {
+             messagesEndRef.current.scrollTop = messagesEndRef.current.scrollHeight;
+         }
+     }, [messages]);
 
 
     const sendMessage = async () => {
@@ -69,7 +79,7 @@ export default function PlaygroundPage() {
                 if (typeof data.text !== 'string') {
                      throw new Error('Invalid response format from bot');
                 }
-                const botMessage: ChatMessage = { sender: 'bot', text: data.text };
+                const botMessage: ChatMessage = { sender: 'bot', text: data.text }; // Changed data.response to data.text
 
 
                 // Add bot message to display
@@ -78,6 +88,7 @@ export default function PlaygroundPage() {
             } catch (error) {
                 console.error('Error sending message:', error);
                 // Optionally show an error message to the user
+                 toast.error('Failed to get a response from the bot.'); // Added error toast
                  setMessages((prevMessages) => [...prevMessages, { sender: 'bot', text: "Sorry, I encountered an error. Please try again." }]);
             } finally {
                 setIsLoading(false); // Unset loading state
@@ -87,17 +98,18 @@ export default function PlaygroundPage() {
 
     return (
         <div className="flex-1 text-white overflow-y-auto lg:p-6">
+             <Toaster /> {/* Add Toaster component here */}
             <section id="playground" className="">
                 <h2 className="text-3xl font-bold mb-3">Playground</h2>
                 <div className="w-16 h-1 bg-primary-300 mb-6 rounded-full"></div>
 
                 {/* Chat Window */}
-                <div className="flex flex-col h-[75vh] lg:h-[65vh] bg-dark-300 rounded-md p-4">
+                <div className="flex flex-col h-[50vh] lg:h-[65vh] bg-dark-300 rounded-md p-4">
                     {/* Message Display Area */}
-                    <div className="flex-1 overflow-y-auto chat-scrollbar mb-4 pr-4">
+                    <div className="flex-1 overflow-y-auto chat-scrollbar mb-4 pr-4" ref={messagesEndRef}>
                         {messages.map((msg, index) => (
                             <div key={index} className={`mb-4 ${msg.sender === 'user' ? 'text-right' : 'text-left'}`}>
-                                <span className={`inline-block p-2 rounded-lg lg:max-w-xl ${msg.sender === 'user' ? 'bg-primary-500 text-white' : 'bg-primary-200 text-dark-400'}`}>
+                                <span className={`inline-block p-2 rounded-lg max-w-sm lg:max-w-xl ${msg.sender === 'user' ? 'bg-primary-500 text-white' : 'bg-primary-200 text-dark-400'}`}>
                                     {msg.text}
                                 </span>
                             </div>
@@ -127,8 +139,8 @@ export default function PlaygroundPage() {
                         />
                         <button
                             onClick={sendMessage}
-                            className={`px-4 py-[10px] absolute right-0 top-0 rounded-r-md transition duration-200 pointer ${isLoading ? 'bg-gray-500 cursor-not-allowed' : 'bg-primary-600 hover:bg-primary-700 '}`}
-                            disabled={isLoading} 
+                            className={`px-4 py-[10px] absolute right-0 top-0 rounded-r-md transition duration-200 pointer ${isLoading ? 'bg-dark-400 cursor-not-allowed' : 'bg-primary-600 hover:bg-primary-700 '}`}
+                            disabled={isLoading}
                         >
                              <Send className="w-5 h-5 text-primary-300" />
                         </button>

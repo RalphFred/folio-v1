@@ -1,9 +1,58 @@
-import React from 'react';
+'use client';
+
+import React, { FormEvent } from 'react';
 import { Send } from 'lucide-react'; // Import the Send icon
+import toast, { Toaster } from 'react-hot-toast'; // Import react-hot-toast
 
 export default function ContactPage() {
+    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+
+        const formData = new FormData(event.currentTarget);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const subject = formData.get('subject');
+        const message = formData.get('message');
+
+        // Basic form validation
+        if (!name || !email || !subject || !message) {
+            toast.error('Please fill in all fields.');
+            return;
+        }
+
+        // Fetch request to the API route
+        try {
+            const response = await fetch('/api/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name, email, subject, message }),
+            });
+
+            if (response.ok) {
+                // Add success toast notification here
+                toast.success('Message sent successfully!');
+                console.log('Email sent successfully!');
+                // Optionally clear the form fields
+                event.currentTarget.reset();
+            } else {
+                // Add error toast notification here
+                toast.error('Failed to send message. Please try again.');
+                console.error('Failed to send email:', response.statusText);
+            }
+        } catch (error) {
+            // Add error toast notification here for network errors
+            toast.error('An error occurred while sending the message. Please try again later.');
+            console.error('Error sending email:', error);
+        }
+
+        console.log('Form submitted:', { name, email, subject, message });
+    };
+
     return (
         <div className="flex-1 text-white overflow-y-auto">
+            <Toaster /> {/* Add Toaster component here */}
             <section id="contact" className="mb-10">
                 <h2 className="text-3xl font-bold mb-3">Contact Me</h2>
                 <div className="w-16 h-1 bg-primary-300 mb-6 rounded-full"></div>
@@ -23,28 +72,36 @@ export default function ContactPage() {
 
                 {/* Contact Form */}
                 <h2 className="text-3xl font-bold mb-6">Contact Form</h2>
-                <form className="space-y-6">
+                <form className="space-y-6" onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <input
                             type="text"
+                            name="name"
                             placeholder="Full name"
                             className="w-full px-4 py-3 rounded-lg bg-dark-300 border border-dark-400 text-white placeholder-neutral-400 focus:outline-none focus:ring-1 focus:ring-primary-300"
+                            required // Added required attribute
                         />
                         <input
                             type="email"
+                            name="email"
                             placeholder="Email address"
                             className="w-full px-4 py-3 rounded-lg bg-dark-300 border border-dark-400 text-white placeholder-neutral-400 focus:outline-none focus:ring-1 focus:ring-primary-300"
+                            required // Added required attribute
                         />
                     </div>
                     <input
                         type="text"
+                        name="subject"
                         placeholder="Subject"
                         className="w-full px-4 py-3 rounded-lg bg-dark-300 border border-dark-400 text-white placeholder-neutral-400 focus:outline-none focus:ring-1 focus:ring-primary-300"
+                        required // Added required attribute
                     />
                     <textarea
+                        name="message"
                         placeholder="Your Message"
                         rows={6}
                         className="w-full px-4 py-3 rounded-lg bg-dark-300 border border-dark-400 text-white placeholder-neutral-400 focus:outline-none focus:ring-1 focus:ring-primary-300"
+                        required // Added required attribute
                     ></textarea>
                     {/* Button container aligned to the right */}
                     <div className="flex justify-end">
