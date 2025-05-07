@@ -37,9 +37,9 @@ export default function ContactPage() {
                 // Optionally clear the form fields
                 event.currentTarget.reset();
             } else {
-                // Handle server errors (non-2xx responses)
-                const errorData = await response.json();
-                toast.error(errorData.error || 'Failed to send message. Please try again.');
+                // // Handle server errors (non-2xx responses)
+                // const errorData = await response.json();
+                // toast.error(errorData.error || 'Failed to send message. Please try again.');
                 console.error('Failed to send email:', response.statusText);
             }
         } catch (error) {
