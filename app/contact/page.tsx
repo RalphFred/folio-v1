@@ -37,12 +37,13 @@ export default function ContactPage() {
                 // Optionally clear the form fields
                 event.currentTarget.reset();
             } else {
-                // Add error toast notification here
-                toast.error('Failed to send message. Please try again.');
+                // Handle server errors (non-2xx responses)
+                const errorData = await response.json();
+                toast.error(errorData.error || 'Failed to send message. Please try again.');
                 console.error('Failed to send email:', response.statusText);
             }
         } catch (error) {
-            // Add error toast notification here for network errors
+            // Handle network errors or other exceptions
             toast.error('An error occurred while sending the message. Please try again later.');
             console.error('Error sending email:', error);
         }
@@ -73,7 +74,7 @@ export default function ContactPage() {
                 {/* Contact Form */}
                 <h2 className="text-3xl font-bold mb-6">Contact Form</h2>
                 <form className="space-y-6" onSubmit={handleSubmit}>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-[1px]">
                         <input
                             type="text"
                             name="name"
@@ -89,6 +90,7 @@ export default function ContactPage() {
                             required // Added required attribute
                         />
                     </div>
+                    <div className='px-[1px] space-y-6'>
                     <input
                         type="text"
                         name="subject"
@@ -103,6 +105,7 @@ export default function ContactPage() {
                         className="w-full px-4 py-3 rounded-lg bg-dark-300 border border-dark-400 text-white placeholder-neutral-400 focus:outline-none focus:ring-1 focus:ring-primary-300"
                         required // Added required attribute
                     ></textarea>
+                    </div>
                     {/* Button container aligned to the right */}
                     <div className="flex justify-end">
                         <button
