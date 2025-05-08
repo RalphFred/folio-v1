@@ -5,6 +5,7 @@ import Sidebar from "@/components/Sidebar";
 import Navbar from "@/components/Navbar";
 import MobileNav from "@/components/MobileNav";
 import TopBar from "@/components/Topbar";
+import { Analytics } from "@vercel/analytics/react"
 
 const montserrat = Montserrat({
   weight: ["400", "700"],
