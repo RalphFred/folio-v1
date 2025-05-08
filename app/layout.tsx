@@ -12,9 +12,52 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Kwaghuter Raphael Portfolio",
-  description: "Frontend developer portfolio built with Next.js",
+  title:
+    "Raphael Kwaghuter | S-Class Websites in 7 Days – Next.js, React, TypeScript",
+  description:
+    "Raphael Kwaghuter builds high-performance, conversion-focused websites in 7 days. Specializing in React, Next.js, TypeScript, and modern UI/UX — perfect for startups, coaches, and real estate pros who want to stand out online.",
+  keywords: [
+    "Raphael Kwaghuter",
+    "frontend developer",
+    "Next.js developer",
+    "React developer",
+    "TypeScript",
+    "high-converting websites",
+    "SEO web development",
+    "websites in 7 days",
+    "startup websites",
+    "real estate websites",
+    "coach website developer",
+    "S-Class websites",
+    "modern web design",
+  ],
+  authors: [{ name: "Raphael Kwaghuter" }],
+  creator: "Raphael Kwaghuter",
+  openGraph: {
+    title: "Raphael Kwaghuter | S-Class Websites in 7 Days",
+    description:
+      "Next.js, React & TypeScript websites built to perform — delivered in 7 days. SEO-ready, lightning-fast, and conversion-focused.",
+    url: "https://raphaels.studio",
+    siteName: "Raphael Kwaghuter",
+    images: [
+      {
+        url: "https://raphaels.studio/og-image.png", // Replace with your actual OG image
+        width: 1200,
+        height: 630,
+        alt: "Raphael Kwaghuter Portfolio Preview",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Raphael Kwaghuter | S-Class Websites in 7 Days",
+    description:
+      "Next.js, React & TypeScript websites built to perform — delivered in 7 days.",
+    images: ["https://yourdomain.com/og-image.png"], // Replace with your actual OG image
+  },
 };
+
 
 export default function RootLayout({
   children,

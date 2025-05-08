@@ -8,11 +8,15 @@ export default function Home() {
                 <h2 className="text-3xl font-bold mb-3">About Me</h2>
                 <div className="w-16 h-1 bg-primary-300 mb-6 rounded-full"></div> {/* Underline */}
                 <p className="text-neutral-300 leading-relaxed mb-4">
-                    Not your regular developer — I’m the one who brings a mix of creativity, precision, and serious performance to every project. I craft sleek, responsive websites and web apps using React, Next.js, TypeScript, and Tailwind CSS, making sure they don’t just look good, but feel incredible to use. From smooth animations to clean UI/UX and lightning-fast performance, every detail is designed to leave a lasting impression.
+                    I don’t just build websites — I deliver S-Class digital experiences designed to capture leads, rank on Google, and drive real results. Whether it’s a sleek portfolio, a powerful SaaS dashboard, or a high-converting e-commerce site, I bring clarity, performance, and polish — all delivered in just 7 days.
+                </p>
+                <p className="text-neutral-300 leading-relaxed mb-4">
+                    Using modern tools like React, Next.js, TypeScript, GSAP, and Tailwind CSS, I create websites and web apps that don’t just look premium — they feel intuitive, fast, and unforgettable. From smooth scroll animations to SEO-optimized pages and conversion-focused design, every line of code is intentional.
                 </p>
                 <p className="text-neutral-300 leading-relaxed">
-                    I'm passionate about building digital experiences that are as powerful as they are beautiful. If you're looking for someone who can turn your ideas into something truly standout — not just another template — let’s create something remarkable together.
+                    If you're done settling for basic templates and want something custom, responsive, and built to stand out — let’s build something remarkable together.
                 </p>
+
             </section>
 
             {/* What I'm Doing Section */}
@@ -34,7 +38,7 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                    
+
                     {/* Card 1: Mobile Apps */}
                     <div className="bg-dark-300 border border-dark-400 p-6 rounded-lg shadow-lg">
                         <div className="flex items-center">
