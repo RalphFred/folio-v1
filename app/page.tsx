@@ -8,13 +8,19 @@ export default function Home() {
                 <h2 className="text-3xl font-bold mb-3">About Me</h2>
                 <div className="w-16 h-1 bg-primary-300 mb-6 rounded-full"></div> {/* Underline */}
                 <p className="text-neutral-300 leading-relaxed mb-4">
-                    I don’t just build websites — I deliver S-Class digital experiences designed to capture leads, rank on Google, and drive real results. Whether it’s a sleek portfolio, a powerful SaaS dashboard, or a high-converting e-commerce site, I bring clarity, performance, and polish — all delivered in just 7 days.
+                    I am Kwaghuter Raphael, a dedicated Frontend Developer passionate about crafting exceptional digital experiences. I specialize in building high-performing, SEO-optimized, and conversion-focused websites and web applications that truly resonate with your audience and drive measurable results.
                 </p>
                 <p className="text-neutral-300 leading-relaxed mb-4">
-                    Using modern tools like React, Next.js, TypeScript, GSAP, and Tailwind CSS, I create websites and web apps that don’t just look premium — they feel intuitive, fast, and unforgettable. From smooth scroll animations to SEO-optimized pages and conversion-focused design, every line of code is intentional.
+                    Using modern tools like React, Next.js, TypeScript, GSAP, and Tailwind CSS, I develop solutions that are not just visually premium, but also intuitive, incredibly fast, and unforgettable. From seamless user interactions to scalable architecture, every line of code is written with precision and purpose.
                 </p>
                 <p className="text-neutral-300 leading-relaxed">
-                    If you're done settling for basic templates and want something custom, responsive, and built to stand out — let’s build something remarkable together.
+                    Whether you need a sleek portfolio, a robust SaaS dashboard, or a high-converting e-commerce platform, I focus on delivering:
+
+                    <ul className="list-disc ml-6 mt-2">
+                        <li>Clarity: User-friendly interfaces that guide visitors effortlessly.</li>
+                        <li>Performance: Blazing-fast load times and smooth functionality.</li>
+                        <li>Polish: Meticulous attention to detail for a truly professional feel.</li>
+                    </ul>
                 </p>
 
             </section>
